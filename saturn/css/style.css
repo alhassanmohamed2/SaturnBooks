@@ -1,0 +1,734 @@
+/* start main rulez */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Langar', cursive;
+    background-color: #F2E9E4;
+    overflow: hidden;
+}
+
+.copyright {
+    color: #fff;
+}
+
+
+/*end main rulez */
+
+
+/* start header */
+
+.topnav {
+    overflow: hidden;
+    background-color: #22223B;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+a.Title {
+    border-right: 2px solid white;
+}
+
+a.Title:hover {
+    background-color: #000;
+    color: white;
+}
+
+.topnav a.activee {
+    color: #fff;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 1150px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    a.Title {
+        border-right: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    a.Title {
+        border-right: none;
+    }
+}
+
+
+/*end header */
+
+
+/* start text */
+
+.text {
+    overflow: hidden;
+    padding-top: 0px;
+    margin-bottom: 23px;
+}
+
+.useful {
+    font-size: 20px;
+    margin-left: 5px;
+    color:#22223B;
+}
+
+.text .useful {
+    float: left;
+    width: 99.9%;
+    height: fit-content;
+}
+
+.text .useful p {
+    line-height: 1.7;
+}
+
+
+/* end text */
+
+
+/* start type */
+
+.info {
+   /* background-image: url(https://mymodernmet.com/wp/wp-content/uploads/2019/05/Zhongshuge-Bookstore-X-Living.gif);
+    
+    background-size: 100% 100%;
+    background-position:center;*/
+    background-color:#4A4E69;
+    font-size: 20px;
+    color: #22223B;
+    padding: 5px;
+}
+
+.info h2 {
+    margin: 0px auto;
+    color: #22223B;
+    background-color: rgba(214, 232, 250, 0.46);
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+
+/*************************************************************/
+
+.info>p {
+    margin: 20px 20px 0 20px;
+    line-height: 1.7;
+    color: #22223B;
+    background-color: rgba(214, 232, 250, 0.46);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.info p {
+    line-height: 1.7;
+}
+
+.info .book-type {
+    margin: 20px 20px 0 20px;
+    
+}
+.info .book-type .active{
+    display:block;
+}
+
+.info .book-type>div {
+    min-height: 100px;
+    background-color: rgba(214, 232, 250, 0.46);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    display:none;
+}
+
+
+/* end type */
+
+
+/* start our-book */
+
+.our-work {
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.our-work div {
+    display: none;
+}
+
+.our-work div.active {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 700px) {
+    .our-work {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+        overflow: hidden;
+        text-align: left;
+        border-radius: 20px;
+    }
+    .container h2,
+    .our-books .container p {
+        margin-left: 5px;
+    }
+    div.our-work {
+        margin-left: 5px;
+    }
+    /********************/
+    .info {
+       /* background-image: url(https://images.unsplash.com/photo-1518281579100-d51bcf505b0e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80);
+        background-size: 100% 100%;
+        background-position: center;*/
+        background-color:#4A4E69;
+        overflow: hidden;
+        font-size: 20px;
+        color: #22223B;
+    }
+}
+
+
+/* end our-book */
+
+
+/* start footer */
+
+.footer {
+    background-color: #22223B;
+    padding: 20px 0;
+    text-align: center;
+   
+}
+
+.copyright {
+    color: #fff;
+}
+
+
+/* end footer */
+
+
+/*Contact Page Style Start*/
+
+div.box {
+    margin: 0px auto;
+    width: 230px;
+    border: 3px solid #F1F4F3;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 20px 10px 15px 40px;
+    color: white;
+}
+
+.BC {
+    background-color: #F1F4F3;
+    padding: 20px
+}
+
+.cform label,
+.cform select,
+.cform input,
+.cform textarea {
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.dbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cform textarea {
+    resize: none;
+}
+
+.btn {
+    font-size: 20px;
+}
+
+p.suc {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+
+/*Contact Page Style End*/
+
+
+/*About Page Style Start*/
+
+h1.ah {
+    text-align: center;
+    font-size: 50px;
+}
+
+.about-text h2 {
+    margin-left: 5px;
+}
+
+.about-text ol li {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+
+/*About Page Style End*/
+
+
+/*details Page style start*/
+
+div.about-book {
+    overflow: hidden;
+}
+
+div.about-book .image {
+    float: left;
+    width: 300px;
+    margin-top: 5px;
+}
+
+div.about-book .image img {
+    width: 100%;
+    margin-left: 5px;
+}
+
+div.about-book .infod {
+    float: left;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+div.about-book .infod .components-books {
+    overflow: hidden;
+    margin: 20px;
+}
+
+div.infod div {
+    margin-bottom: 10px;
+}
+
+div.infod a {
+    padding: 5px;
+    color: #F1F4F3;
+    background-color: black;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+div.infod a:hover {
+    background-color: rgba(214, 232, 250, 0.46);
+    color: green;
+}
+
+.binfod {
+    color: #000;
+    font-size: 35px;
+    padding: 5px;
+}
+
+img.bimg {
+    margin: 10px
+}
+
+.our-work>div {
+    left: 50%;
+    top: 50%;
+    width: 33.333333%;
+    margin-bottom: 10px;
+}
+
+
+/*details book buttons start*/
+
+div.infod a.icon-buy {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk8Jjs3PsOwa3cIO8UB6npgAQI9TDKnwLnKQ&usqp=CAU");
+    background-size: cover;
+    padding: 30px;
+    display: block;
+    text-decoration: none;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.bplay,
+.bpasue,
+.bresume {
+    background-color: black;
+    color: white;
+    height: 33px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.bplay:hover,
+.bpasue:hover,
+.bresume:hover {
+    background-color: rgba(214, 232, 250, 0.46);
+    color: green;
+}
+
+
+/*details book buttons end*/
+
+
+/*details Page Style End*/
+
+
+/*load page styles start*/
+
+.over-load {
+    background: #4A4E69;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    text-align: center;
+    vertical-align: center;
+}
+
+.sk-folding-cube {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+left: 50%;
+top: 50%;
+
+    transform: translate(-50%, -50%);
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    vertical-align:center;
+}
+
+.sk-folding-cube .sk-cube {
+   float:left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+.sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
+}
+
+.sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    transform: scale(1.1) rotateZ(180deg);
+}
+
+.sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    transform: scale(1.1) rotateZ(270deg);
+}
+
+.sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+}
+
+@-webkit-keyframes sk-foldCubeAngle {
+    0%,
+    10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-foldCubeAngle {
+    0%,
+    10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+
+/*load page styles end*/
+
+
+/*Books List Page start*/
+
+.list {
+    border: 2px solid #000;
+    margin: 10px;
+    padding: 5px;
+    display: none;
+}
+
+#books {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#books td,
+#books th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#books tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#books tr:hover {
+    background-color: #ddd;
+}
+
+#books th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #000;
+    color: white;
+}
+
+.fsearch-form {
+    margin: 10px auto;
+    text-align: center;
+    align-items: center;
+}
+
+.search-form input {
+    margin: 5px auto;
+    display: block;
+}
+
+#tsearch {
+    padding: 5px;
+    width: 80%;
+    font-size: 25px;
+}
+
+#bsearch {
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+.books-all {
+    padding: 5px;
+    color: #F1F4F3;
+    background-color: black;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/*Books List Page end*/
+
+
+/*Tabel Responsive Media*/
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+}
+
+
+/*Tabel Responsive Media end*/
+
+.symtext {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.symtext img {
+    margin-top: 10px;
+}
+
+.sym-text {
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+.img-upload,
+.pdf-upload {
+    width: 200px;
+    overflow: hidden;
+}
+
+
+/*Progress Start*/
+
+.progress {
+    text-align: center;
+    margin: 5px 5px 10px 5px;
+}
+
+.bar {
+    background-color: #000;
+    padding: 15px 0px;
+}
+
+.percent {
+    color: green;
+}
+
+
+/*Progress End*/
+
+.visit{
+    margin:10px;
+    border: 2px solid black;
+    border-radius:5px;
+    background-color:#22223B;
+    color:white;
+    font-size:15px;
+    width:fit-content;
+    padding:5px;
+}
+
+.user-upload{
+    padding: 5px;
+    color: #F1F4F3;
+    background-color: black;
+    border-radius: 3px;
+    display: inline-block;
+    text-decoration: none;
+    margin:5px;
+    font-size:30px;
+
+}
+.fupload input{
+    background-color:black;
+    color:white;
+}
