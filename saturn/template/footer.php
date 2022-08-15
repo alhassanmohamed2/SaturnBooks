@@ -32,8 +32,7 @@
     
 </html>
 <script>
-     const t = document.querySelector('[alt="www.000webhost.com"]');
-t.outerHTML = "";
+
  function slider1(){
 $(".info .book-type .active").each(function(){
 if(!$(this).is(":last-child")){
