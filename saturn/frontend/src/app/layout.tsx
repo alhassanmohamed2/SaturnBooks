@@ -27,7 +27,7 @@ export default function RootLayout({
         </header>
         <main>{children}</main>
         <footer>
-          <p>&copy; {new Date().getFullYear()} Saturn Books. Redesigned with ❤️ by AI.</p>
+          <p>&copy; {new Date().getFullYear()} Saturn Books. All rights reserved.</p>
         </footer>
       </body>
     </html>
