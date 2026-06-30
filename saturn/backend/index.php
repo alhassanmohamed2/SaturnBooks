@@ -85,4 +85,42 @@ if ($uri === '/api/register' && $method === 'POST') {
     exit();
 }
 
+if ($uri === '/api/books' && $method === 'POST') {
+    $name = $_POST['name'] ?? '';
+    $section = $_POST['section'] ?? '';
+    $author = $_POST['author'] ?? '';
+    $pages = $_POST['page'] ?? '';
+    $buy = $_POST['buy'] ?? '';
+    $brief = $_POST['breif'] ?? '';
+    $lang = $_POST['langu'] ?? '';
+    $username = $_POST['username'] ?? 'admin'; // Should come from session/token in a real app
+
+    $target_dir_img = "uploads/images/";
+    $target_dir_pdf = "uploads/books/";
+    
+    if (!is_dir($target_dir_img)) mkdir($target_dir_img, 0777, true);
+    if (!is_dir($target_dir_pdf)) mkdir($target_dir_pdf, 0777, true);
+
+    $img_path = "";
+    $pdf_path = "";
+
+    if (isset($_FILES["img"]) && $_FILES["img"]["error"] == 0) {
+        $img_path = $target_dir_img . basename($_FILES["img"]["name"]);
+        move_uploaded_file($_FILES["img"]["tmp_name"], $img_path);
+    }
+    
+    if (isset($_FILES["pdf"]) && $_FILES["pdf"]["error"] == 0) {
+        $pdf_path = $target_dir_pdf . basename($_FILES["pdf"]["name"]);
+        move_uploaded_file($_FILES["pdf"]["tmp_name"], $pdf_path);
+    }
+
+    $stmt = $pdo->prepare("INSERT INTO books(name, Section, author, pdfpath, imgpath, pages, buylink, brief, user, lang) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    if ($stmt->execute([$name, $section, $author, $pdf_path, $img_path, $pages, $buy, $brief, $username, $lang])) {
+        echo json_encode(['success' => true, 'message' => 'Book uploaded successfully']);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Failed to upload book']);
+    }
+    exit();
+}
+
 echo json_encode(['message' => 'API is running']);

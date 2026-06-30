@@ -2,21 +2,32 @@
 
 import { useEffect, useState } from 'react';
 
+interface Book {
+  id: number;
+  name: string;
+  Section: string;
+  author: string;
+  brief: string;
+}
+
 export default function Home() {
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
-    // Fetch visitor count from the backend API
-    const fetchVisitors = async () => {
-      try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'}/visitors`);
-        const data = await res.json();
-        setVisitorCount(data.visitor);
-      } catch (err) {
-        console.error('Failed to fetch visitors', err);
-      }
-    };
-    fetchVisitors();
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || '/api';
+    
+    // Fetch visitor count
+    fetch(`${apiUrl}/visitors`)
+      .then(res => res.json())
+      .then(data => setVisitorCount(data.visitor))
+      .catch(err => console.error('Failed to fetch visitors', err));
+
+    // Fetch books
+    fetch(`${apiUrl}/books`)
+      .then(res => res.json())
+      .then(data => setBooks(data))
+      .catch(err => console.error('Failed to fetch books', err));
   }, []);
 
   return (
@@ -60,6 +71,23 @@ export default function Home() {
             <p>The plot revolves around a crime of sorts that must be solved—or foiled—by the protagonists.</p>
           </div>
         </div>
+      </section>
+
+      <section id="books" className="container">
+        <h2 className="section-title">Our Library</h2>
+        {books.length > 0 ? (
+          <div className="grid">
+            {books.map((book) => (
+              <div key={book.id} className="card">
+                <h3>{book.name}</h3>
+                <p style={{color: 'var(--primary-color)', marginBottom: '1rem'}}>{book.author} &bull; {book.Section}</p>
+                <p>{book.brief || 'No description available.'}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p style={{textAlign: 'center', color: 'var(--text-muted)'}}>No books available right now.</p>
+        )}
       </section>
     </>
   )
