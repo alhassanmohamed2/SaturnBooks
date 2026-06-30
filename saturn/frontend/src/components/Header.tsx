@@ -41,7 +41,7 @@ export default function Header() {
             
             {user ? (
               <>
-                <li><Link href={`/user/${user.username}`}><span style={{color: 'var(--primary-color)'}}>Hi, {user.username}</span></Link></li>
+                <li><Link href={`/user/${user.username}`}><span style={{color: 'var(--primary-color)'}}>👤 Profile ({user.username})</span></Link></li>
                 <li><a href="#" onClick={handleLogout} className="btn" style={{padding: '0.5rem 1.5rem', background: 'transparent', border: '1px solid var(--primary-color)'}}>Logout</a></li>
               </>
             ) : (
@@ -69,7 +69,7 @@ export default function Header() {
         
         {user ? (
           <>
-            <Link href={`/user/${user.username}`} onClick={closeMobileNav} style={{color: 'var(--primary-color)'}}>Hi, {user.username}</Link>
+            <Link href={`/user/${user.username}`} onClick={closeMobileNav} style={{color: 'var(--primary-color)'}}>👤 Profile ({user.username})</Link>
             <a href="#" onClick={(e) => { closeMobileNav(); handleLogout(e); }}>Logout</a>
           </>
         ) : (
