@@ -100,7 +100,7 @@ export default function UserProfilePage({ params }: { params: Promise<{ name: st
       <div className="profile-section">
         <div className="profile-card">
           <img
-            src={profile.profile_image ? `/uploads/${profile.profile_image}` : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="%231e293b"%3E%3Ccircle cx="60" cy="60" r="60"/%3E%3Ctext x="60" y="70" text-anchor="middle" fill="%2394a3b8" font-size="40" font-family="Outfit"%3E👤%3C/text%3E%3C/svg%3E'}
+            src={profile.profile_image ? `/${profile.profile_image}` : 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="%231e293b"%3E%3Ccircle cx="60" cy="60" r="60"/%3E%3Ctext x="60" y="70" text-anchor="middle" fill="%2394a3b8" font-size="40" font-family="Outfit"%3E👤%3C/text%3E%3C/svg%3E'}
             alt={profile.username}
             className="profile-image"
             onError={(e) => {

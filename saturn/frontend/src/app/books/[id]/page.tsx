@@ -97,7 +97,7 @@ export default function BookDetail({ params }: { params: Promise<{ id: string }>
     <div className="container page-fade-in">
       <div className="book-detail">
         <img
-          src={`/uploads/${book.imgpath}`}
+          src={`/${book.imgpath}`}
           alt={book.name}
           className="book-cover"
           onError={(e) => {
@@ -119,7 +119,7 @@ export default function BookDetail({ params }: { params: Promise<{ id: string }>
 
           <div className="book-actions">
             {book.pdfpath && (
-              <a href={`/uploads/${book.pdfpath}`} download className="btn">
+              <a href={`/${book.pdfpath}`} download className="btn">
                 ⬇ Download PDF
               </a>
             )}
