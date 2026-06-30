@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'Saturn Books | Expand Your Universe',
@@ -14,17 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>
-          <div className="logo">SaturnBooks</div>
-          <nav>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="#genres">Genres</a></li>
-              <li><a href="#books">Library</a></li>
-              <li><a href="/login" className="btn" style={{padding: '0.5rem 1.5rem'}}>Login</a></li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         <main>{children}</main>
         <footer>
           <p>&copy; {new Date().getFullYear()} Saturn Books. All rights reserved.</p>

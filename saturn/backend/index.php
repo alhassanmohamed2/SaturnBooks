@@ -123,4 +123,4 @@ if ($uri === '/api/books' && $method === 'POST') {
     exit();
 }
 
-echo json_encode(['message' => 'API is running', 'debug_uri' => $uri, 'debug_method' => $method]);
+echo json_encode(['message' => 'API fallback: ' . $uri . ' (' . $method . ')']);

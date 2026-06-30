@@ -30,6 +30,7 @@ export default function Login() {
       if (data.success) {
         setSuccess(isLogin ? 'Logged in successfully!' : 'Registered successfully! You can now log in.');
         if (isLogin) {
+          localStorage.setItem('saturn_user', JSON.stringify(data.user));
           setTimeout(() => router.push('/'), 1000);
         } else {
           setIsLogin(true);
