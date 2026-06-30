@@ -189,19 +189,9 @@ if ($uri === '/api/books' && $method === 'POST') {
     $lang     = trim($_POST['lang'] ?? '');
     $username = trim($_POST['username'] ?? 'admin');
 
-    // Validate required alphabetic fields
+    // Validate required fields
     if ($name === '' || $author === '' || $section === '') {
         jsonResponse(['error' => 'Fields name, author, and section are required'], 400);
-    }
-
-    if (!isAlphabetic($name)) {
-        jsonResponse(['error' => 'Book name must contain only alphabetic characters'], 400);
-    }
-    if (!isAlphabetic($author)) {
-        jsonResponse(['error' => 'Author must contain only alphabetic characters'], 400);
-    }
-    if (!isAlphabetic($section)) {
-        jsonResponse(['error' => 'Section must contain only alphabetic characters'], 400);
     }
 
     // Ensure upload directories exist
