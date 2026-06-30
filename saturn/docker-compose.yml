@@ -43,9 +43,9 @@ services:
     working_dir: /app
     volumes:
       - ./frontend:/app
-    command: sh -c "npm install && npm run dev -- -H 0.0.0.0 -p 8974"
+    command: sh -c "npm install && npm run build && npm run start"
     ports:
-      - "8974:8974"
+      - "8974:3000"
     environment:
       - NEXT_PUBLIC_API_URL=/api
 
