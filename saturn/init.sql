@@ -1,15 +1,25 @@
 CREATE DATABASE IF NOT EXISTS saturn_books;
 USE saturn_books;
 
+-- ──────────────────────────────────────────────
+-- Users table
+-- Password column widened to 255 to accommodate
+-- bcrypt/argon2 hashes from password_hash().
+-- ──────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `imgpath` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_username` (`username`),
+  UNIQUE KEY `uq_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- ──────────────────────────────────────────────
+-- Books table
+-- ──────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS `books` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -25,12 +35,31 @@ CREATE TABLE IF NOT EXISTS `books` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- ──────────────────────────────────────────────
+-- Visitors counter table
+-- ──────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS `visitors` (
   `visitor` int(11) NOT NULL AUTO_INCREMENT,
   `time` time DEFAULT NULL,
   PRIMARY KEY (`visitor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- ──────────────────────────────────────────────
+-- Contact messages table (new)
+-- ──────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS `contact_messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `reason` varchar(100) DEFAULT NULL,
+  `message` text DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ──────────────────────────────────────────────
+-- Seed data
+-- ──────────────────────────────────────────────
 INSERT INTO `visitors` (`time`) VALUES (CURRENT_TIME());
-INSERT INTO `books` (`name`, `Section`, `author`, `pdfpath`, `imgpath`, `pages`, `buylink`, `brief`, `user`, `lang`) VALUES 
+INSERT INTO `books` (`name`, `Section`, `author`, `pdfpath`, `imgpath`, `pages`, `buylink`, `brief`, `user`, `lang`) VALUES
 ('Example Book', 'Classics', 'Jane Doe', 'books/example.pdf', 'books/images/13bc4258f89bbca754b8ea331d6f5de2-d.gif', '100', '#', 'A great book to read.', 'admin', 'English');

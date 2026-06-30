@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 interface Book {
   id: number;
@@ -8,6 +9,7 @@ interface Book {
   Section: string;
   author: string;
   brief: string;
+  imgpath: string;
 }
 
 export default function Home() {
@@ -15,23 +17,21 @@ export default function Home() {
   const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || '/api';
-    
     // Fetch visitor count
-    fetch(`${apiUrl}/visitors`)
+    fetch('/api/visitors')
       .then(res => res.json())
       .then(data => setVisitorCount(data.visitor))
       .catch(err => console.error('Failed to fetch visitors', err));
 
     // Fetch books
-    fetch(`${apiUrl}/books`)
+    fetch('/api/books')
       .then(res => res.json())
       .then(data => setBooks(data))
       .catch(err => console.error('Failed to fetch books', err));
   }, []);
 
   return (
-    <>
+    <div className="page-fade-in">
       <section className="hero">
         <div className="hero-content">
           <h1>The Power of Reading</h1>
@@ -78,17 +78,28 @@ export default function Home() {
         {books.length > 0 ? (
           <div className="grid">
             {books.map((book) => (
-              <div key={book.id} className="card">
-                <h3>{book.name}</h3>
-                <p style={{color: 'var(--primary-color)', marginBottom: '1rem'}}>{book.author} &bull; {book.Section}</p>
-                <p>{book.brief || 'No description available.'}</p>
-              </div>
+              <Link href={`/books/${book.id}`} key={book.id}>
+                <div className="book-card">
+                  {book.imgpath && (
+                    <div className="book-image-wrapper">
+                      <img src={`/api/${book.imgpath}`} alt={book.name} className="book-image" />
+                    </div>
+                  )}
+                  <div className="book-card-content">
+                    <h3>{book.name}</h3>
+                    <p style={{color: 'var(--primary-color)', marginBottom: '1rem'}}>
+                      <span className="badge">{book.Section}</span>
+                    </p>
+                    <p>{book.author}</p>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         ) : (
           <p style={{textAlign: 'center', color: 'var(--text-muted)'}}>No books available right now.</p>
         )}
       </section>
-    </>
+    </div>
   )
 }
