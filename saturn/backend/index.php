@@ -183,10 +183,10 @@ if ($uri === '/api/books' && $method === 'POST') {
     $name     = trim($_POST['name'] ?? '');
     $author   = trim($_POST['author'] ?? '');
     $section  = trim($_POST['section'] ?? '');
-    $pages    = trim($_POST['page'] ?? '');
-    $buyLink  = trim($_POST['buy'] ?? '');
-    $brief    = trim($_POST['breif'] ?? '');
-    $lang     = trim($_POST['langu'] ?? '');
+    $pages    = trim($_POST['pages'] ?? '');
+    $buyLink  = trim($_POST['buylink'] ?? '');
+    $brief    = trim($_POST['brief'] ?? '');
+    $lang     = trim($_POST['lang'] ?? '');
     $username = trim($_POST['username'] ?? 'admin');
 
     // Validate required alphabetic fields
@@ -216,10 +216,10 @@ if ($uri === '/api/books' && $method === 'POST') {
 
     // Handle image upload
     $imgPath = '';
-    if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
-        $imgFilename = uniqueFilename($_FILES['img']['name']);
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $imgFilename = uniqueFilename($_FILES['image']['name']);
         $imgPath     = $imgDir . $imgFilename;
-        move_uploaded_file($_FILES['img']['tmp_name'], $imgPath);
+        move_uploaded_file($_FILES['image']['tmp_name'], $imgPath);
     }
 
     // Handle PDF upload
