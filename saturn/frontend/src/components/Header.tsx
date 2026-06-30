@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="container">
+    <header>
       <div className="logo">Saturn<span>Books</span></div>
       <nav>
         <ul>
